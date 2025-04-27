@@ -1,4 +1,5 @@
 const EventEmitter  = require('events');
+const Logger = require('./logger');
 
 const emitter = new EventEmitter();
 
@@ -9,9 +10,19 @@ const emitter = new EventEmitter();
 
 // emitter.emit('greet');
 
-emitter.on('user', (user) => 
+// emitter.on('user', (user) => 
+// {
+//     console.log(`User name is ${user.name} and age is ${user.age}`);
+// });
+
+// emitter.emit('user', {name: "Himanshu", age: 30});
+
+
+const logger = new Logger();
+logger.on('log', (data) => 
 {
-    console.log(`User name is ${user.name} and age is ${user.age}`);
+    console.log(`[${data.timestamp.toISOString()}] ${data.message}`);
 });
 
-emitter.emit('user', {name: "Himanshu", age: 30});
+logger.log('Server started');
+logger.log('User Signed in.');
