@@ -1,0 +1,21 @@
+{
+  "name": "login_tracker",
+  "version": "1.0.0",
+  "description": "node app to track the login of an user",
+  "main": "index.js",
+  "scripts": {
+    "test": "npm run test",
+    "start": "node index.js",
+    "dev": "nodemon index.js"
+  },
+  "keywords": [
+    "tracker",
+    "login",
+    "tracker"
+  ],
+  "author": "himanshu",
+  "license": "ISC",
+  "dependencies": {
+    "nodemon": "^3.1.10"
+  }
+}
